@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 import os 
 import sympy
 ```
-###### The package *pandas* is needed so that you can create and manipulate dataframes. The package *matplotlib.pyplot* is needed to be able to visual the data into a graph. *Os* is imported so that python can be run from the terminal. Lastly, the package *sympy* is needed to create mathematical equation where variables can act as '*symbols*' that can be manipulated to do simple algebraic mathematics. 
+###### The package *pandas* is needed so that you can create and manipulate dataframes. The package *matplotlib.pyplot* is needed to be able to visual the data into a graph. *Os* is imported so that terminal commands could be run in a python script. Lastly, the package *sympy* is needed to create mathematical equation where variables can act as '*symbols*' that can be manipulated to do simple algebraic mathematics. 
 
 ###### After importing the packages, I created a list of lists. Within the list was 18 lists, each representing an element. The first argument is the number of protons that element has and the second argument is the number of inner shell electrons the element has: 
 
@@ -115,7 +115,6 @@ enc
 ###### One of the many benefits of scientific computing is the **speed of its mathematical calculation**. Just by giving the computer the mathematical calculation you want it to run, it is able to run that calculation through a set of values and give you the answer in subsequent order. In the example above, through scientific computing the effective nuclear charge of the 18 elements were automatically calculated. And you only had to define the formula and give the values that are plugged into the variables once and the answers are calculated. On the other hand, if this was not used using scientific computing and instead calculated by hand, you would have to set up the equation every time you want to find the effective nuclear charge of an element. It is not immediate as the calculation is based on a human mind, not a computer. As it is not immediate, the process would be time consuming and not as efficient as scientific computing. 
 
 
-
 # Benefit 2: Manipulation of Dataframes
 
 ###### the array *enc* is then turned into a dataframe with the column name called "Effective Nuclear Charge". But after pushing the df dataframe columns into the Zeff_eq equation, only the values of the corresponding element's effective nuclear charge was added into the enc array. The corresponding element name did not follow with it. So a column of elements which correspond to each effective nuclear charge value was created by creating a list of the elements and adding it to the *enc* dataframe using the function insert() the function insert() was used so that the column was 'inserted' before the **'Effective Nuclear Charge'** column: 
@@ -151,7 +150,9 @@ df_enc['Effective Nuclear Charge']= df_enc['Effective Nuclear Charge'].astype(fl
 
 ###### To graph data, the function plot() is used. The first argument is what the x value will be, the second argument is the y value, and the third argument is the geometry of the graph. In this case, the purpose of graphing the data is to relatively compare the effective nuclear charges of the elements. The best geometry for that purpose is the bar graph, which creates a bar for every category in the x variable. The height of the bar is proportionate to the value of y. The greater the effective nuclear charge of the element, the higher the bar. As the bars of each element is side by side from each other, the comparison of the element's effective nuclear charge can easily determined visually. 
 
-###### The title of graph is created by using the function plt.title(). To create the x-axis title, plt.xlabel() was used. To create the y-axis title, plt.ylabel() was used: 
+###### The title of graph is created by using the function plt.title(). To create the x-axis title, plt.xlabel() was used. To create the y-axis title, plt.ylabel() was used. 
+
+###### After visualizing the data into a bar graph, the function plt.savefig() can be used to save the graphic into a file that can be saved into the computer: 
 
 ```{python}
 
@@ -160,6 +161,43 @@ plt.title("Effective Nuclear Charge of the Elements")
 plt.xlabel("Elements")
 plt.ylabel("Effective Nuclear Charge(protons-inner shell electrons)")
 
+plt.savefig("my_final_chart.svg")
+os.system("start my_final_chart.svg")
+
+# inside the plt.savefig() function, is the name of the file (*that you named*) that contains the graphic of your graph.  
+
+# os.system helps the computer be able to use a terminal command in python script. The terminal command start is to open the file with the graphic that was just created. 
+
+```
+
+###### Lastly, another benefit of scientific computing is how easy and automatic it is to visualize a chosen dataset. Unlike by hand, where you have to painstakingly set up the axis and its scale, and plot the points individually, scientific computing is able to formulate a graph based on the characteristics of the data. For example, in this model, the x value is the names of the 18 elements. The computer adjusted the x axis so that it divided the x axis into 18 intervals, each named after the element name in subsequent order it was in the dataframe. As for the y axis, the values are the effective nuclear charge of the elements. The values ranges from a minimum of 0 to a maximum of 8. The computer recognizing this, divided the y axis into 9 intervals from 0 to 8. 
+
+###### Not only is the data visualization automatic, editing the aesthetics of the graph is also very easy to do. Using the right matplotlib.pyplot function, you can change anything from graph titles, axis titles, color of the data, axis scale, graph geometry, etc. 
+
+###### Looking at the data visually, what can be concluded is that as you go down the row on the periodic table, the effective nuclear charge increases. The first element on the second row, Lithium, has the smallest effective nuclear charge on the second row with a value of 1. And the last element on the second row, Neon, has the largest value. What's interesting is that after Neon, and going down a row to Sodium, the effective nuclear charge value drastically goes down. As you go down the row again, the effective nuclear charge value goes up again. This means that everytime you go down a row, the effective nuclear charge decreases by a lot. This sudden decrease in effective nuclear charge can be explained by the fact that as you go down a row, a new shell is created. When this new shell only contains a few electrons, the effective nuclear charge is low because there's a lot more inner shell electrons from the prior shell compared to the new shell. This gap eventually closed as you get to the end of the third row, only for it to probably go down again with the addition of a new 4th shell. The 2nd row of elements and the corresponding elements just below as the 3rd row of elements have the same trend of effective nuclear charge values. This is because the number of electrons that it increases by and can contain is the same. This relationship changes as you move onto the 4th row as elements in the 4th row and beyond not only include s and p orbitals but d and f oribitals. 
+
+###### This trend can also tell us the relative comparison of atomic size of the elements within its own row. For within a row, the greater the effective nuclear charge, the more tightly the electrons are wound to the nucleus, decreasing the size of the element. However, you cannot compare between groups because as said earlier, as you go down a row, a new shell is added. An addition of a shell increases the size of an atom, greater than the size of any of the elements on the previous row. An addition of a shell has that much of an impact on atomic size. 
+
+
+# Arguments Against Scientific Computing 
+
+###### Although there are many reasons, including aformentioned benefits why scientific computing is useful, there are arguments made that go against using scientific computing. One could argue that while coding is useful in that a computer's calculating speed is quick and therefore more efficient, it takes time and effor to set up the code to work properly. One wrong syntax can cause the code not to work. Everything in the code's placement has to be perfect in order for what you want it to do to run properly. It begs the question on whether it's worth taking the time to set up code for the computer to recognize and do what you want it to do. However, the benefit of setting up the code outweighs the con; once the code is set up to run perfectly, it is forever reusable at any time. And unless you delete the file, the code is forever saved to extract from and use. 
+
+###### Another argument is that instead of coding, you can use Excel to do most of what I was modeling earlier. From creating databases to graping it, there are things you can do on Excel. Which is true, but what excel can't do what scientific computing can do is create a dataframe by plugging in an array of values into a complex formula. 
+
+###### An example of this is below. The Allred-Rochow formula for calculating electronegativity is a complex equation with a mix of numbers and multiple variables. The two variables are the variable Zeff, which is the effective nuclear charge of the atom, and the variable r^2 which is the atom's covalent radius squared. Unlike the previous equation Zeff_eq, which only contain subtraction and can probably be done in excel, this formula has algebraic mathematics complicated enough that it cannot be computed in excel.  
+
+###### By creating the Allred-Rochow formula for electronegativity into a sympy equation and using the effective nuclear charge values I calculated earlier and the covalent radii values from another dataframe, a function that is able to calculate the electronegativity of an element simply by giving the computer the name of the element and the covalent radii bond type will be created. 
+
+Firstly, the variables in the equation are turned into symbols which then the equation now containing the variable symbols is turned into a sympy equation: 
+
+```{python}
+
+r= sympy.symbols('r')
+Zeff = sympy.symbols('Z_eff')
+X= sympify((3590* Zeff/r**2) + 0.744)
+
+X
 ```
 
 
