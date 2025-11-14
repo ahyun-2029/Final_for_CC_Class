@@ -100,8 +100,35 @@ Zeff_eq= sympify(Z-S)
 Zeff_eq
 ```
 
+###### With the sympy equation created, a new dataframe will be created to hold the effective nuclear charge of each element in the **df** dataframe. First, it is creating an empty array named *enc* in which the values of each element's effective nuclear charge will go into. Using the function zip() will take the column in the *df* dataframe called **'Protons'** and the column in the *df* dataframe called **'Inner Shell Electrons'** pair them together. This means that the first row of each column corresponds to each other. Then using the append() function, which adds onto an array based on an indicated item, adds onto the empty enc array based on **Zeff_eq** equation created earlier where each value in the **'Proton'** column is **Z** and the corresponding column **'Inner Shell Electrons'** is **S**:
 
+```{python}
 
+enc= []
+
+for protons, electrons in zip(df["Protons"], df["Inner Shell Electrons"]):
+                           enc.append(Zeff_eq.subs({Z:protons, S: electrons}))
+
+enc
+
+```
+
+###### the array *enc* is then turned into a dataframe with the column name called "Effective Nuclear Charge". But after pushing the df dataframe columns into the Zeff_eq equation, only the values of the corresponding element's effective nuclear charge was added into the enc array. The corresponding element name did not follow with it. So a column of elements which correspond to each effective nuclear charge value was created by creating a list of the elements and adding it to the *enc* dataframe using the function insert() the function insert() was used so that the column was 'inserted' before the **'Effective Nuclear Charge'** column: 
+
+```{python}
+df_enc= pd.DataFrame(enc)
+
+df_enc.columns= ['Effective Nuclear Charge']
+
+Elements= ['H','He','Li','Be','B','C','N',
+           'O','F','Ne','Na','Mg','Al','Si',
+           'P','S','Cl','Ar']
+
+df_enc.insert(loc = 0, column= 'Elements', value= Elements)
+
+df_enc
+
+```
 
 
 
