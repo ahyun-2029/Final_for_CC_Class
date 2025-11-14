@@ -33,6 +33,78 @@ import matplotlib.pyplot as plt
 import os 
 import sympy
 ```
-###### The package pandas is needed so that you can create and manipulate dataframes. The package matplotlib.pyplot is needed to be able to visual the data into a graph. Os is imported so that python can be run from the terminal. Lastly, the package sympy is needed to create mathematical equation where variables can act as '*symbols*' that can be manipulated to do simple algebraic mathematics. 
+###### The package *pandas* is needed so that you can create and manipulate dataframes. The package *matplotlib.pyplot* is needed to be able to visual the data into a graph. *Os* is imported so that python can be run from the terminal. Lastly, the package *sympy* is needed to create mathematical equation where variables can act as '*symbols*' that can be manipulated to do simple algebraic mathematics. 
+
+###### After importing the packages, I created a list of lists. Within the list was 18 lists, each representing an element. The first argument is the number of protons that element has and the second argument is the number of inner shell electrons the element has: 
+
+```{python}
+
+elements= [
+            [1,1],
+            [2,2],
+            [3,2],
+            [4,2],
+            [5,2],
+            [6,2],
+            [7,2],
+            [8,2],
+            [9,2],
+            [10,2],
+            [11,10],
+            [12,10], 
+            [13, 10],
+            [14,10],
+            [15,10],
+            [16,10],
+            [17,10],
+            [18,10]
+            ]
+```
+
+###### This list is then changed into a dataframe using a function from the pandas package pd.DataFrame:
+
+```{python}
+
+df= pd.DataFrame(elements)
+
+df.columns= ['Protons','Inner Shell Electrons']
+
+df
+
+# the first arguments of the list of lists is now the first column of the data and the second argument is now the second column. using df.columns, the first column is named 'Protons' and the second column named 'Inner Shell Electrons'. 
+
+```
+
+###### Right off the bat, we see the usefullness of scientific computing. After giving the computer a set of data organized in an array, one function can automatically format a two-dimensional array into a dataframe.
+
+
+###### Now that all the data needed to calculate the effective nuclear charge is in one dataframe, an equation using sympy must be created. This equation will be the function in which the data in the dataframe will go through and the values that are calculated will then create a new dataframe which will contain the effective nuclear charge of each of the 18 elements. 
+
+###### Using the sympy.symbols function, the indicated variable will become a 'symbol' that can be manipulated algebraically. The formula for the effective nuclear charge of an atom is the number of protons minus the number of inner shell electrons that atom has. The number of protons will be presented as the variable symbol '**Z**' and the number of inner shell electrons will be reprented by the variable symbol '**S**': 
+
+```{python}
+
+Z= sympy.symbols('Z')
+S= sympy.symbols('S')
+
+```
+
+###### Now that the variables in the equation are turned into symbols, the function simpify (*which can be found by importing simpify from sympy*) is used to turn function into a sympy equation: 
+
+```{python}
+
+from sympy import sympify
+
+Zeff_eq= sympify(Z-S)
+
+Zeff_eq
+```
+
+
+
+
+
+
+
 
 
