@@ -1,3 +1,19 @@
-# Final for CC_Class 
+# Final for CC_Class
+
+---
+title: The Benefits of Scientific Computing 
+author:
+  name: Angela Yun
+format: 
+  html: 
+    toc: true 
+    theme: Monospace
+    main font: playfair display 
+    embed-resources: true 
+---
+
+# Why Scientific Computing?
+
+###### With the rise of AI being incorporated in many aspects of our society, we see more and more things being run by computer programs rather than people themselves. This switch to scientific computing to run analysis of huge amounts of data was due to the fact that rather than making people go through every piece of data, which is both time consuming and can invite error, having a trained computer program analyze and predict millions of data in a matter of seconds can push forward many advancements in the science fields. I developed a very simple model that represented a concept I learned in chemistry through code to prove the benefits of scientific computing. There are many benefits to scientific computing but through my code, I focused on how scientific computing is beneficial due to speed of calculation, easy manipulation of dataframes, and how it automatically visualizes data for the user. 
 
 
