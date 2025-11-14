@@ -1,5 +1,3 @@
-# Final for CC_Class
-
 ---
 title: The Benefits of Scientific Computing 
 author:
@@ -8,24 +6,25 @@ format:
   html: 
     toc: true 
     theme: Monospace
-    main font: playfair display 
+    main font: Times New Roman 
     embed-resources: true 
 ---
 
-# Why Scientific Computing?
+# **Why Scientific Computing?**
 
-###### With the rise of AI being incorporated in many aspects of our society, we see more and more things being run by computer programs rather than people themselves. This switch to scientific computing to run analysis of huge amounts of data was due to the fact that rather than making people go through every piece of data, which is both time consuming and can invite error, having a trained computer program analyze and predict millions of data in a matter of seconds can push forward many advancements in the science fields. I developed a very simple model that represented a concept I learned in chemistry through code to prove the benefits of scientific computing. There are many benefits to scientific computing but through my code, I focused on how scientific computing is beneficial due to speed of calculation, easy manipulation of dataframes, and how it automatically visualizes data for the user. 
+###### With the rise of AI being incorporated in many aspects of our society, we see more and more things being run by computer programs rather than people themselves. This switch to scientific computing to run analysis of huge amounts of data was because, rather than making people go through every piece of data, which is both time-consuming and can invite error, having a trained computer program analyze and predict millions of data points in a matter of seconds can push forward many advancements in the science fields. I developed a very simple model that represented a concept I learned in chemistry through code to prove the benefits of scientific computing. There are many benefits to scientific computing, but through my code, I focused on how scientific computing is beneficial due to speed of calculation, easy manipulation of dataframes, and how it automatically visualizes data for the user. 
 
-# Chemistry Concept: Effective Nuclear Charge
+# **Chemistry Concept: Effective Nuclear Charge**
 
-###### While opposite charges attract, same charges repel each other. The electrons in an atom can cause repulsion between each other; the outer shell electrons are repeled by the electrons in the inner shell. This concept is called *shielding*; the repulsion reduces the proton-electron attraction, reducing the overall attractive force the protons in the atom have on the electrons. **Effective Nuclear Charge** is the amount of nuclear charge (proton charge) is felt by each individual electron. The higher the effective nulear charge, the stronger the attractive force the protons have on the electrons and the more tightly the electrons are wounded around the atom's nucleus. By knowing the effective nuclear charge, we are able to compare the relative sizes of elements as the more electrons are tightly wounded around the nucleus, the smaller the atomic size. We are also able to determine which elements are more likely to lose electrons in a chemical reaction as atoms that are bigger in size have less attractive force pulling the electrons in its nucleus making it easier for other atoms to pull outer electrons towards itself. Another benefit of knowing the effective nucler charge of an atom is that through the **Allred-Rochow's** formula for calculating *electronegativity*, a number that measures the tendency of an atom to attract the shared electrons in a bond, we can predict the type of molecular bond that atoms that are bonded together make. Atoms that are bonded together can make three types of bonds. A **pure covalent** bond is when electrons between the atoms are shared equally. A compound that have pure covalent bonds are non-polar molecules, the overall charge of the molecule is zero. A **polar covalent** bond is when the electrons between the atoms are shared unequally. This means the electrons shared are more frequently in one atom over the other. The atom that is more electronegative is typically the atom that attracts the electron more frequently and is partially negative while the other atom is partially positive. A compound that have polar covalent bonds are polar molecules, they have partially negative and partially positive charges in the molecule. Lastly, an **ionic** bond is when there is a complete transfer of electron from one atom to another, making the atom that lost its electron a positively charged atom (*cation*), and the atom that gained an electron a negatively charged atom (*anion*) If the difference in electronegativity between the two bonded atoms is less than 0.4, the compound is non-polar and the bond is a pure covalent. If the difference is between 0.4 and 1.8, the compound is polar and the bond a polar covalent. If the difference is greater than 1.8, the compound is now considered ionic and the bond an ionic bond.
+###### While opposite charges attract, same charges repel each other. The electrons in an atom can cause repulsion between each other; the outer shell electrons are repelled by the electrons in the inner shell. This concept is called *shielding*; the repulsion reduces the proton-electron attraction, reducing the overall attractive force the protons in the atom have on the electrons. **Effective Nuclear Charge** is the amount of nuclear charge (*proton charge*) that is felt by each electron. The higher the effective nuclear charge, the stronger the attractive force the protons have on the electrons, and the more tightly the electrons are bound around the atom’s nucleus. By knowing the effective nuclear charge, we are able to compare the relative sizes of elements, as the more electrons are tightly bound around the nucleus, the smaller the atomic size. We are also able to determine which elements are more likely to lose electrons in a chemical reaction, as atoms that are bigger in size have less attractive force pulling the electrons into its nucleus, making it easier for other atoms to pull outer electrons towards themselves. Another benefit of knowing the effective nuclear charge of an atom is that, through Allred-Rochow’s formula for calculating **electronegativity**, a number that measures the tendency of an atom to attract the shared electrons in a bond, we can predict the type of molecular bond that atoms that are bonded together make. Atoms that are bonded together can make **three types of bonds**. A **pure covalent** bond occurs when electrons between the atoms are shared equally. A compound that has pure covalent bonds is are **non-polar** molecule; the overall charge of the molecule is zero. A **polar covalent** bond is when the electrons between the atoms are shared unequally. This means the electrons shared are more frequently in one atom than the other. The more electronegative atom is typically the atom that attracts the electron more frequently and is *partially negative*, while the other atom is *partially positive*. A compound that has polar covalent bonds is are **polar** molecule; they have partially negative and partially positive charges in the molecule. Lastly, an **ionic bond** is when there is a complete transfer of electron from one atom to another, making the atom that lost its electron a positively charged atom (*cation*), and the atom that gained an electron a negatively charged atom (*anion*) If the difference in electronegativity between the two bonded atoms is *less than 0.4*, the compound is *non-polar* and the bond is a *pure covalent*. If the difference is *between 0.4 and 1.8*, the compound is *polar*, and the bond is a *polar covalent* bond. If the *difference is greater than 1.8*, the compound is now considered *ionic*, and the bond is an *ionic* bond.
 
-###### My code calculates the effective nuclear charge of the first 3 rows of the elements on the periodic table and compares the relative effective nuclear charges by visualizing it on a bar graph. And using the calculated effective nuclear charge, I created a function based on the Allred-Rochow's electronegativity formula that by calling a specific element of the first 3 rows on the periodic table, is able to calculate the electronegativity of that said element.
+###### My code calculates the effective nuclear charge of the first 3 rows of the elements on the periodic table and compares the relative effective nuclear charges by visualizing them on a bar graph. And using the calculated effective nuclear charge, I created a function based on Allred-Rochow’s electronegativity formula that, by calling a specific element of the first 3 rows on the periodic table, is able to calculate the electronegativity of that said element.
 
 
-# Benefit 1: Speed of Calculation 
 
-###### The first thing before writing any type of code is to import all the packages needed to be able to do what you want to do through code: 
+# **Benefit 1: Speed of Calculation**
+
+###### The first thing before writing any type of code is to **import** all the packages needed for your code: 
 
 ```{python}
 import pandas as pd 
@@ -33,7 +32,6 @@ import matplotlib.pyplot as plt
 import os 
 import sympy
 ```
-###### The package *pandas* is needed so that you can create and manipulate dataframes. The package *matplotlib.pyplot* is needed to be able to visual the data into a graph. *Os* is imported so that terminal commands could be run in a python script. Lastly, the package *sympy* is needed to create mathematical equation where variables can act as '*symbols*' that can be manipulated to do simple algebraic mathematics. 
 
 ###### After importing the packages, I created a list of lists. Within the list was 18 lists, each representing an element. The first argument is the number of protons that element has and the second argument is the number of inner shell electrons the element has: 
 
@@ -71,16 +69,16 @@ df.columns= ['Protons','Inner Shell Electrons']
 
 df
 
-# the first arguments of the list of lists is now the first column of the data and the second argument is now the second column. using df.columns, the first column is named 'Protons' and the second column named 'Inner Shell Electrons'. 
+# The first arguments of the list of lists is now the first column of the data and the second argument is now the second column. Using df.columns, the first column is named 'Protons' and the second column named 'Inner Shell Electrons'. 
 
 ```
 
 ###### Right off the bat, we see the usefullness of scientific computing. After giving the computer a set of data organized in an array, one function can automatically format a two-dimensional array into a dataframe.
 
 
-###### Now that all the data needed to calculate the effective nuclear charge is in one dataframe, an equation using sympy must be created. This equation will be the function in which the data in the dataframe will go through and the values that are calculated will then create a new dataframe which will contain the effective nuclear charge of each of the 18 elements. 
+######  Now that all the data needed to calculate the effective nuclear charge is in one dataframe, an equation using sympy must be created. This equation will be the function through which the data in the dataframe will go through, and the values that are calculated will then create a new dataframe, which will contain the effective nuclear charge of each of the 18 elements. 
 
-###### Using the sympy.symbols function, the indicated variable will become a 'symbol' that can be manipulated algebraically. The formula for the effective nuclear charge of an atom is the number of protons minus the number of inner shell electrons that atom has. The number of protons will be presented as the variable symbol '**Z**' and the number of inner shell electrons will be reprented by the variable symbol '**S**': 
+###### Using the sympy.symbols() function, the indicated variable will become a 'symbol' that can be manipulated algebraically. The formula for the effective nuclear charge of an atom is the number of protons minus the number of inner shell electrons that atom has. The number of protons will be presented as the variable symbol '**Z**' and the number of inner shell electrons will be represented by the variable symbol '**S**': 
 
 ```{python}
 
@@ -100,7 +98,7 @@ Zeff_eq= sympify(Z-S)
 Zeff_eq
 ```
 
-###### With the sympy equation created, a new dataframe will be created to hold the effective nuclear charge of each element in the **df** dataframe. First, it is creating an empty array named *enc* in which the values of each element's effective nuclear charge will go into. Using the function zip() will take the column in the *df* dataframe called **'Protons'** and the column in the *df* dataframe called **'Inner Shell Electrons'** pair them together. This means that the first row of each column corresponds to each other. Then using the append() function, which adds onto an array based on an indicated item, adds onto the empty enc array based on **Zeff_eq** equation created earlier where each value in the **'Proton'** column is **Z** and the corresponding column **'Inner Shell Electrons'** is **S**:
+###### With the sympy equation created, a new dataframe will be created to hold the effective nuclear charge of each element in the **df** dataframe. First, it is creating an empty array named *enc* in which the values of each element's effective nuclear charge will go. Using the function zip() will take the column in the *df* dataframe called **'Protons'** and the column in the *df* dataframe called **' Inner Shell Electrons'**, pair them together. This means that the first row of each column corresponds to the other. Then, using the append() function, which adds onto an array based on an indicated item, adds onto the empty enc array based on the **Zeff_eq** equation created earlier, where each value in the **'Proton'** column is **Z** and the corresponding column **’Inner Shell Electrons'** is **S**:
 
 ```{python}
 
@@ -112,12 +110,12 @@ for protons, electrons in zip(df["Protons"], df["Inner Shell Electrons"]):
 enc
 
 ```
-###### One of the many benefits of scientific computing is the **speed of its mathematical calculation**. Just by giving the computer the mathematical calculation you want it to run, it is able to run that calculation through a set of values and give you the answer in subsequent order. In the example above, through scientific computing the effective nuclear charge of the 18 elements were automatically calculated. And you only had to define the formula and give the values that are plugged into the variables once and the answers are calculated. On the other hand, if this was not used using scientific computing and instead calculated by hand, you would have to set up the equation every time you want to find the effective nuclear charge of an element. It is not immediate as the calculation is based on a human mind, not a computer. As it is not immediate, the process would be time consuming and not as efficient as scientific computing. 
+###### One of the many benefits of scientific computing is the **speed of its mathematical calculation**. Just by giving the computer the mathematical calculation you want it to run, it is able to run that calculation through a set of values and give you the answer in order. In the example above, through scientific computing, the effective nuclear charge of the 18 elements was automatically calculated. And you only had to define the formula and give the values that are plugged into the variables once, and the answers are calculated. On the other hand, if this were not used using scientific computing and instead calculated by hand, you would have to set up the equation every time you want to find the effective nuclear charge of an element. It is not immediate, as the calculation is based on a human mind, not a computer. As it is not immediate, the process would be time-consuming and not as efficient as scientific computing. 
 
 
 # Benefit 2: Manipulation of Dataframes
 
-###### the array *enc* is then turned into a dataframe with the column name called "Effective Nuclear Charge". But after pushing the df dataframe columns into the Zeff_eq equation, only the values of the corresponding element's effective nuclear charge was added into the enc array. The corresponding element name did not follow with it. So a column of elements which correspond to each effective nuclear charge value was created by creating a list of the elements and adding it to the *enc* dataframe using the function insert() the function insert() was used so that the column was 'inserted' before the **'Effective Nuclear Charge'** column: 
+###### The array *enc* is then turned into a dataframe with the column name called "Effective Nuclear Charge". But after pushing the df dataframe columns into the Zeff_eq equation, only the values of the corresponding element's effective nuclear charge were added into the enc array. The corresponding element name did not follow it. So a column of elements which correspond to each effective nuclear charge value was created by creating a list of the elements and adding it to the *enc* dataframe using the function insert(). The function insert() was used so that the column was 'inserted' before the **'Effective Nuclear Charge'** column:
 
 ```{python}
 df_enc= pd.DataFrame(enc)
@@ -133,14 +131,14 @@ df_enc.insert(loc = 0, column= 'Elements', value= Elements)
 df_enc
 
 ```
-###### Another benefit of scientific computing is how easy it is to create dataframes and manipulate it to your liking. All you have to do is give the computer the elements you want in the dataframe, and it automatically formats an array of values into a column of a dataframe. You can change the column name to whatever you want and pull out the whole column (*this was done earlier when the columns of the df dataframe were plugged into its corresponding symbolic variable in the Zeff_eq sympy equation*) or extract a specific element in a dataframe and use it in any way you like. Moving the order of columns as shown above is also a quick fix and something that would’ve taken longer if a dataframe was written by hand.
+###### Another benefit of scientific computing is how easy it is to create dataframes and manipulate them to your liking. All you have to do is give the computer the elements you want in the dataframe, and it automatically formats an array of values into a column of a dataframe. You can change the column name to whatever you want and pull out the whole column (*this was done earlier when the columns of the df dataframe were plugged into its corresponding symbolic variable in the Zeff_eq sympy equation*) or extract a specific element in a dataframe and use it in any way you like. Moving the order of columns as shown above is also a quick fix and something that would’ve taken longer if a dataframe were written by hand.
 
 
 # Benefit 3: Visualization of Data 
 
 ###### Now that the effective nuclear charge of the 18 elements are calculated and in a dataframe, a graph that represents the data will be created using matplotlib.pyplot functions. 
 
-###### Before doing that, the column that contains the effective nuclear charge values must have its data class changed. After calculating the effective nuclear using the sympy equation Zeff_eq, the values in the enc array are not recognized as numeric objects according to the computer. In order to make the computer recognize it as a number object, as.type(float) will be used: 
+###### Before doing that, the column that contains the effective nuclear charge values must have its data class changed. After calculating the effective nuclear charge using the sympy equation Zeff_eq, the values in the enc array are not recognized as numeric objects according to the computer. To make the computer recognize it as a number object, as.type(float) will be used: 
 
 ```{python}
 
@@ -148,7 +146,7 @@ df_enc['Effective Nuclear Charge']= df_enc['Effective Nuclear Charge'].astype(fl
 
 ```
 
-###### To graph data, the function plot() is used. The first argument is what the x value will be, the second argument is the y value, and the third argument is the geometry of the graph. In this case, the purpose of graphing the data is to relatively compare the effective nuclear charges of the elements. The best geometry for that purpose is the bar graph, which creates a bar for every category in the x variable. The height of the bar is proportionate to the value of y. The greater the effective nuclear charge of the element, the higher the bar. As the bars of each element is side by side from each other, the comparison of the element's effective nuclear charge can easily determined visually. 
+###### To graph data, the function plot() is used. The first argument is what the x value will be, the second argument is the y value, and the third argument is the geometry of the graph. In this case, the purpose of graphing the data is to relatively compare the effective nuclear charges of the elements. The best geometry for that purpose is the bar graph, which creates a bar for every category in the x variable. The height of the bar is proportional to the value of y. The greater the effective nuclear charge of the element, the higher the bar. As the bars of each element are side by side from each other, the comparison of the element's effective nuclear charge can be easily determined visually. 
 
 ###### The title of graph is created by using the function plt.title(). To create the x-axis title, plt.xlabel() was used. To create the y-axis title, plt.ylabel() was used. 
 
@@ -170,26 +168,27 @@ os.system("start my_final_chart.svg")
 
 ```
 
-###### Lastly, another benefit of scientific computing is how easy and automatic it is to visualize a chosen dataset. Unlike by hand, where you have to painstakingly set up the axis and its scale, and plot the points individually, scientific computing is able to formulate a graph based on the characteristics of the data. For example, in this model, the x value is the names of the 18 elements. The computer adjusted the x axis so that it divided the x axis into 18 intervals, each named after the element name in subsequent order it was in the dataframe. As for the y axis, the values are the effective nuclear charge of the elements. The values ranges from a minimum of 0 to a maximum of 8. The computer recognizing this, divided the y axis into 9 intervals from 0 to 8. 
+###### Lastly, a benefit of scientific computing is how easy and automatic it is to visualize a chosen dataset. Unlike by hand, scientific computing is able to automatically formulate a graph based on the characteristics of the data. For example, in this model, the x value is the names of the 18 elements. The computer adjusted the x-axis so that it divided the x-axis into 18 intervals, each named after the element name in subsequent order it was in the dataframe. As for the y-axis, the values are the effective nuclear charge of the elements. The values range from a minimum of 0 to a maximum of 8. The computer, recognizing this, divided the y-axis into 9 intervals from 0 to 8. 
 
-###### Not only is the data visualization automatic, editing the aesthetics of the graph is also very easy to do. Using the right matplotlib.pyplot function, you can change anything from graph titles, axis titles, color of the data, axis scale, graph geometry, etc. 
+###### Not only is the data visualization automatic, but editing the aesthetics of the graph is also very easy. Using the right matplotlib.pyplot function, you can change anything from graph titles, axis titles, color of the data, axis scale, graph geometry, etc. 
 
-###### Looking at the data visually, what can be concluded is that as you go down the row on the periodic table, the effective nuclear charge increases. The first element on the second row, Lithium, has the smallest effective nuclear charge on the second row with a value of 1. And the last element on the second row, Neon, has the largest value. What's interesting is that after Neon, and going down a row to Sodium, the effective nuclear charge value drastically goes down. As you go down the row again, the effective nuclear charge value goes up again. This means that everytime you go down a row, the effective nuclear charge decreases by a lot. This sudden decrease in effective nuclear charge can be explained by the fact that as you go down a row, a new shell is created. When this new shell only contains a few electrons, the effective nuclear charge is low because there's a lot more inner shell electrons from the prior shell compared to the new shell. This gap eventually closed as you get to the end of the third row, only for it to probably go down again with the addition of a new 4th shell. The 2nd row of elements and the corresponding elements just below as the 3rd row of elements have the same trend of effective nuclear charge values. This is because the number of electrons that it increases by and can contain is the same. This relationship changes as you move onto the 4th row as elements in the 4th row and beyond not only include s and p orbitals but d and f oribitals. 
+###### Looking at the data visually, what can be concluded is that as you go down the row on the periodic table, the effective nuclear charge increases. The first element on the second row, Lithium, has the smallest effective nuclear charge on the second row with a value of 1. And the last element on the second row, Neon, has the largest value. What's interesting is that after Neon, and going down a row to Sodium, the effective nuclear charge value drastically goes down. As you go down the row again, the effective nuclear charge value goes up again. This means that every time you go down a row, the effective nuclear charge decreases a lot. This sudden decrease in effective nuclear charge can be explained by the fact that, as you go down a row, a new shell is created. When this new shell only contains a few electrons, the effective nuclear charge is low because there are a lot more inner shell electrons from the prior shell compared to the new shell. This gap eventually closed as you get to the end of the third row, only for it to probably go down again with the addition of a new 4th shell. The 2nd row of elements and the corresponding elements just below, as the 3rd row of elements, have the same trend of effective nuclear charge values. This is because the number of electrons that it increases by and can contain is the same. This relationship changes as you move onto the 4th row, as elements in the 4th row and beyond not only include s and p orbitals but d and f orbitals. 
 
-###### This trend can also tell us the relative comparison of atomic size of the elements within its own row. For within a row, the greater the effective nuclear charge, the more tightly the electrons are wound to the nucleus, decreasing the size of the element. However, you cannot compare between groups because as said earlier, as you go down a row, a new shell is added. An addition of a shell increases the size of an atom, greater than the size of any of the elements on the previous row. An addition of a shell has that much of an impact on atomic size. 
+###### This trend can also tell us the relative comparison of the atomic size of the elements within their own row. Within a row, the greater the effective nuclear charge, the more tightly the electrons are bound to the nucleus, decreasing the size of the element. However, you cannot compare between groups because, as said earlier, as you go down a row, a new shell is added. The addition of a shell increases the size of an atom, greater than the size of any of the elements on the previous row. The addition of a shell has that much of an impact on atomic size.
+ 
 
 
 # Arguments Against Scientific Computing 
 
-###### Although there are many reasons, including aformentioned benefits why scientific computing is useful, there are arguments made that go against using scientific computing. One could argue that while coding is useful in that a computer's calculating speed is quick and therefore more efficient, it takes time and effor to set up the code to work properly. One wrong syntax can cause the code not to work. Everything in the code's placement has to be perfect in order for what you want it to do to run properly. It begs the question on whether it's worth taking the time to set up code for the computer to recognize and do what you want it to do. However, the benefit of setting up the code outweighs the con; once the code is set up to run perfectly, it is forever reusable at any time. And unless you delete the file, the code is forever saved to extract from and use. 
+###### Although there are many reasons, including the aforementioned benefits, why scientific computing is useful, there are arguments made that go against using scientific computing. One could argue that while coding is useful in that a computer's calculating speed is quick and therefore more efficient, it takes time and effort to set up the code to work properly. One wrong syntax can cause the code not to work. Everything in the code's placement has to be perfect for what you want it to do to run properly. It begs the question of whether it's worth taking the time to set up code for the computer to recognize and do what you want it to do. However, the benefit of setting up the code outweighs the con; once the code is set up to run perfectly, it is forever reusable at any time. And unless you delete the file, the code is forever saved to extract from and use. 
 
-###### Another argument is that instead of coding, you can use Excel to do most of what I was modeling earlier. From creating databases to graping it, there are things you can do on Excel. Which is true, but what excel can't do what scientific computing can do is create a dataframe by plugging in an array of values into a complex formula. 
+###### Another argument is that instead of coding, you can use Excel to do most of what I was modeling earlier. From creating databases to graphing them, there are things you can do in Excel. Which is true, but what Excel can't do, what scientific computing can do is create a dataframe by plugging in an array of values into a complex formula. 
 
-###### An example of this is below. The Allred-Rochow formula for calculating electronegativity is a complex equation with a mix of numbers and multiple variables. The two variables are the variable Zeff, which is the effective nuclear charge of the atom, and the variable r^2 which is the atom's covalent radius squared. Unlike the previous equation Zeff_eq, which only contain subtraction and can probably be done in excel, this formula has algebraic mathematics complicated enough that it cannot be computed in excel.  
+###### An example of this is below. The Allred-Rochow formula for calculating electronegativity is a complex equation with a mix of numbers and multiple variables. The two variables are the variable Zeff, which is the effective nuclear charge of the atom, and the variable r^2, which is the atom's covalent radius squared. Unlike the previous equation Zeff_eq, which only contains subtraction and can probably be done in Excel, this formula has algebraic mathematics complicated enough that it cannot be computed in Excel.  
 
-###### By creating the Allred-Rochow formula for electronegativity into a sympy equation and using the effective nuclear charge values I calculated earlier and the covalent radii values from another dataframe, a function that is able to calculate the electronegativity of an element simply by giving the computer the name of the element and the covalent radii bond type will be created. 
+###### By creating the Allred-Rochow formula for electronegativity into a sympy equation and using the effective nuclear charge values I calculated earlier and the covalent radii values from another dataframe, a function that can calculate the electronegativity of an element simply by giving the computer the name of the element and the covalent radii bond type will be created. 
 
-###### Firstly, the variables in the equation are turned into symbols which then the equation now containing the variable symbols is turned into a sympy equation: 
+###### Firstly, the variables in the equation are turned into symbols which then the equation, now containing the variable symbols, is turned into a sympy equation: 
 
 ```{python}
 
@@ -200,7 +199,7 @@ X= sympify((3590* Zeff/r**2) + 0.744)
 X
 ```
 
-A premade dataframe which contains data of each element's covalent radius is loaded onto the computer using the function pd.read.csv(). Then, two functions are created. find_r, which gives a covalent radius value based on the element name and the bond type called, and find_Zeff, which gives the effective nuclear charge value based on the element name called. Both are these function are needed because at the moment, there's simply a column of values of the covalent radius and the effective nuclear charge but no system in the computer that can extract the information needed and plug it into the electronegativity formula. Thus, these functions become that system. These two functions are both put into a function that based on the element name and the bond type, would substitute the corresponding covalent radius and effective nuclear charge into the electronegativty equation: 
+###### A premade dataframe that contains data of each element's covalent radius is loaded onto the computer using the function pd.read.csv(). Then, two functions are created. find_r, which gives a covalent radius value based on the element name and the bond type, and find_Zeff, which gives the effective nuclear charge value based on the element name. Both are these functions are needed because at the moment, there's simply a column of values of the covalent radius and the effective nuclear charge, but no system in the computer that can extract the information needed and plug it into the electronegativity formula. Thus, these functions become that system. These two functions are both put into a function that, based on the element name and the bond type, would substitute the corresponding covalent radius and effective nuclear charge into the electronegativity equation:
 
 ```{python}
 
@@ -230,26 +229,27 @@ def find_X(element, bonds):
 
 ```{python}
 
-# electronegativity of N
-# the type of bond made when two Nitrogen atoms bond together is a tripe bond; bonds= 3
+# Electronegativity of N
+# The type of bond made when two Nitrogen atoms bond together is a tripe bond; bonds= 3
 
 find_X('N', 3)
 
 ```
 
 ```{python}
-# finding out the difference between the electronegativity of two Nitrogens in order to determine the bond type of the Nitrogen gas molecule (N2): 
+# Finding out the difference between the electronegativity of two Nitrogens in order to determine the bond type of the Nitrogen gas molecule (N2): 
 
 
 (find_X('N',3))-(find_X('N',3))
 
 ```
 
-###### According to Allred-Rochow's equation, the electronegativity of the Nitrogen atom is ~6.90 and the bond type for the Nitrogen gas is a pure covalent bond, making it a non-polar compound. 
 
-###### *comparing the electronegativity value computed and the electronegativity scale created by Allred-Rochow using their equation, there is a significant difference. It was not because the computer made a mistake in this calulation. It may be due to the difference in the r values. The r values I used was based on another scientists, findings which may differ from the r values Allred-Rochow used. But overall trend should be the same. 
+###### According to Allred-Rochow's equation, the electronegativity of the Nitrogen atom is ~6.90, and the bond type for the Nitrogen gas is a pure covalent bond, making it a non-polar compound. 
+
+###### *Comparing the electronegativity value computed and the electronegativity scale created by Allred-Rochow using their equation, there is a significant difference. It was not because the computer made a mistake in this calculation. It may be due to the difference in the r values. The r values I used were based on another scientist, findings, which may differ from the r values Allred-Rochow used. But the overall trend should be the same. 
 
 # Conclusion 
 
-###### In conclusion, although some may argue whether scientific computing is really worth the hassle, the benefits overwhelmingly beat the negatives. In this essay, I went over 3 benefits of scientific computing based on the code I wrote; scientific computing is benefit due to how its quick calculations which accelerates efficiency, easy to create and manipulate dataframes, and automatic visualization of data. The increasing use of scientific computing in not only scientific research but also our everyday lives goes to show scientific computing many uses and its eventual integration to human society. This is a good thing as more of our time is used efficiently, the time saved can be used to accelerate our advancements in many areas, including areas that help the overall wellbeing of the world and the people living in it. 
+###### In conclusion, although some may argue whether scientific computing is really worth the hassle, the benefits overwhelmingly beat the negatives. In this essay, I went over 3 benefits of scientific computing based on the code I wrote; scientific computing is beneficial due to its quick calculations, which accelerates efficiency, easy creation and manipulation of dataframes, and automatic visualization of data. The increasing use of scientific computing in not only scientific research but also our everyday lives goes to show scientific computing’s many uses and its eventual integration into human society. This is a good thing as more of our time is used efficiently; the time saved can be used to accelerate our advancements in many areas, including areas that help the overall well-being of the world and the people living in it. 
 
