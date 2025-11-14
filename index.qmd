@@ -189,7 +189,7 @@ os.system("start my_final_chart.svg")
 
 ###### By creating the Allred-Rochow formula for electronegativity into a sympy equation and using the effective nuclear charge values I calculated earlier and the covalent radii values from another dataframe, a function that is able to calculate the electronegativity of an element simply by giving the computer the name of the element and the covalent radii bond type will be created. 
 
-Firstly, the variables in the equation are turned into symbols which then the equation now containing the variable symbols is turned into a sympy equation: 
+###### Firstly, the variables in the equation are turned into symbols which then the equation now containing the variable symbols is turned into a sympy equation: 
 
 ```{python}
 
@@ -200,9 +200,56 @@ X= sympify((3590* Zeff/r**2) + 0.744)
 X
 ```
 
+A premade dataframe which contains data of each element's covalent radius is loaded onto the computer using the function pd.read.csv(). Then, two functions are created. find_r, which gives a covalent radius value based on the element name and the bond type called, and find_Zeff, which gives the effective nuclear charge value based on the element name called. Both are these function are needed because at the moment, there's simply a column of values of the covalent radius and the effective nuclear charge but no system in the computer that can extract the information needed and plug it into the electronegativity formula. Thus, these functions become that system. These two functions are both put into a function that based on the element name and the bond type, would substitute the corresponding covalent radius and effective nuclear charge into the electronegativty equation: 
+
+```{python}
+
+df_cre= pd.read_csv("covalent_radii_of_elements.csv")
 
 
+print(df_cre)
+
+def find_r(element, bonds): 
+    if bonds== 1:
+        return df_cre[df_cre['Element']== element]['Covalent Radii(Single Bonds)'].item()
+    elif bonds== 2:
+        return df_cre[df_cre['Element']== element]['Covalent Radii(Double Bonds)'].item()
+    elif bonds== 3: 
+        return df_cre[df_cre['Element']== element]['Covalent Radii(Triple Bonds)'].item()
+    else: 
+        print("Please choose a bond between 1-3")
+
+def find_Zeff(element):
+    return df_enc[df_enc['Elements']== element]['Effective Nuclear Charge'].item()
+
+def find_X(element, bonds):
+    return X.subs({r: find_r(element, bonds), Zeff: find_Zeff(element)})
+
+```
+###### Let's say you want to know the electronegativity of Nitrogen gas (N2) and its bond type. You can find that out by using the find_X function that was made above: 
+
+```{python}
+
+# electronegativity of N
+# the type of bond made when two Nitrogen atoms bond together is a tripe bond; bonds= 3
+
+find_X('N', 3)
+
+```
+
+```{python}
+# finding out the difference between the electronegativity of two Nitrogens in order to determine the bond type of the Nitrogen gas molecule (N2): 
 
 
+(find_X('N',3))-(find_X('N',3))
 
+```
+
+###### According to Allred-Rochow's equation, the electronegativity of the Nitrogen atom is ~6.90 and the bond type for the Nitrogen gas is a pure covalent bond, making it a non-polar compound. 
+
+###### *comparing the electronegativity value computed and the electronegativity scale created by Allred-Rochow using their equation, there is a significant difference. It was not because the computer made a mistake in this calulation. It may be due to the difference in the r values. The r values I used was based on another scientists, findings which may differ from the r values Allred-Rochow used. But overall trend should be the same. 
+
+# Conclusion 
+
+###### In conclusion, although some may argue whether scientific computing is really worth the hassle, the benefits overwhelmingly beat the negatives. In this essay, I went over 3 benefits of scientific computing based on the code I wrote; scientific computing is benefit due to how its quick calculations which accelerates efficiency, easy to create and manipulate dataframes, and automatic visualization of data. The increasing use of scientific computing in not only scientific research but also our everyday lives goes to show scientific computing many uses and its eventual integration to human society. This is a good thing as more of our time is used efficiently, the time saved can be used to accelerate our advancements in many areas, including areas that help the overall wellbeing of the world and the people living in it. 
 
