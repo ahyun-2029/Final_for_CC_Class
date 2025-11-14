@@ -113,7 +113,7 @@ enc
 ###### One of the many benefits of scientific computing is the **speed of its mathematical calculation**. Just by giving the computer the mathematical calculation you want it to run, it is able to run that calculation through a set of values and give you the answer in order. In the example above, through scientific computing, the effective nuclear charge of the 18 elements was automatically calculated. And you only had to define the formula and give the values that are plugged into the variables once, and the answers are calculated. On the other hand, if this were not used using scientific computing and instead calculated by hand, you would have to set up the equation every time you want to find the effective nuclear charge of an element. It is not immediate, as the calculation is based on a human mind, not a computer. As it is not immediate, the process would be time-consuming and not as efficient as scientific computing. 
 
 
-# Benefit 2: Manipulation of Dataframes
+# **Benefit 2: Manipulation of Dataframes**
 
 ###### The array *enc* is then turned into a dataframe with the column name called "Effective Nuclear Charge". But after pushing the df dataframe columns into the Zeff_eq equation, only the values of the corresponding element's effective nuclear charge were added into the enc array. The corresponding element name did not follow it. So a column of elements which correspond to each effective nuclear charge value was created by creating a list of the elements and adding it to the *enc* dataframe using the function insert(). The function insert() was used so that the column was 'inserted' before the **'Effective Nuclear Charge'** column:
 
@@ -134,7 +134,7 @@ df_enc
 ###### Another benefit of scientific computing is how easy it is to create dataframes and manipulate them to your liking. All you have to do is give the computer the elements you want in the dataframe, and it automatically formats an array of values into a column of a dataframe. You can change the column name to whatever you want and pull out the whole column (*this was done earlier when the columns of the df dataframe were plugged into its corresponding symbolic variable in the Zeff_eq sympy equation*) or extract a specific element in a dataframe and use it in any way you like. Moving the order of columns as shown above is also a quick fix and something that would’ve taken longer if a dataframe were written by hand.
 
 
-# Benefit 3: Visualization of Data 
+# **Benefit 3: Visualization of Data**
 
 ###### Now that the effective nuclear charge of the 18 elements are calculated and in a dataframe, a graph that represents the data will be created using matplotlib.pyplot functions. 
 
@@ -178,7 +178,7 @@ os.system("start my_final_chart.svg")
  
 
 
-# Arguments Against Scientific Computing 
+# **Arguments Against Scientific Computing**
 
 ###### Although there are many reasons, including the aforementioned benefits, why scientific computing is useful, there are arguments made that go against using scientific computing. One could argue that while coding is useful in that a computer's calculating speed is quick and therefore more efficient, it takes time and effort to set up the code to work properly. One wrong syntax can cause the code not to work. Everything in the code's placement has to be perfect for what you want it to do to run properly. It begs the question of whether it's worth taking the time to set up code for the computer to recognize and do what you want it to do. However, the benefit of setting up the code outweighs the con; once the code is set up to run perfectly, it is forever reusable at any time. And unless you delete the file, the code is forever saved to extract from and use. 
 
@@ -249,7 +249,7 @@ find_X('N', 3)
 
 ###### *Comparing the electronegativity value computed and the electronegativity scale created by Allred-Rochow using their equation, there is a significant difference. It was not because the computer made a mistake in this calculation. It may be due to the difference in the r values. The r values I used were based on another scientist, findings, which may differ from the r values Allred-Rochow used. But the overall trend should be the same. 
 
-# Conclusion 
+# **Conclusion**
 
 ###### In conclusion, although some may argue whether scientific computing is really worth the hassle, the benefits overwhelmingly beat the negatives. In this essay, I went over 3 benefits of scientific computing based on the code I wrote; scientific computing is beneficial due to its quick calculations, which accelerates efficiency, easy creation and manipulation of dataframes, and automatic visualization of data. The increasing use of scientific computing in not only scientific research but also our everyday lives goes to show scientific computing’s many uses and its eventual integration into human society. This is a good thing as more of our time is used efficiently; the time saved can be used to accelerate our advancements in many areas, including areas that help the overall well-being of the world and the people living in it. 
 
