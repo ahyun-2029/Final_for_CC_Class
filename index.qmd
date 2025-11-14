@@ -112,6 +112,11 @@ for protons, electrons in zip(df["Protons"], df["Inner Shell Electrons"]):
 enc
 
 ```
+###### One of the many benefits of scientific computing is the **speed of its mathematical calculation**. Just by giving the computer the mathematical calculation you want it to run, it is able to run that calculation through a set of values and give you the answer in subsequent order. In the example above, through scientific computing the effective nuclear charge of the 18 elements were automatically calculated. And you only had to define the formula and give the values that are plugged into the variables once and the answers are calculated. On the other hand, if this was not used using scientific computing and instead calculated by hand, you would have to set up the equation every time you want to find the effective nuclear charge of an element. It is not immediate as the calculation is based on a human mind, not a computer. As it is not immediate, the process would be time consuming and not as efficient as scientific computing. 
+
+
+
+# Benefit 2: Manipulation of Dataframes
 
 ###### the array *enc* is then turned into a dataframe with the column name called "Effective Nuclear Charge". But after pushing the df dataframe columns into the Zeff_eq equation, only the values of the corresponding element's effective nuclear charge was added into the enc array. The corresponding element name did not follow with it. So a column of elements which correspond to each effective nuclear charge value was created by creating a list of the elements and adding it to the *enc* dataframe using the function insert() the function insert() was used so that the column was 'inserted' before the **'Effective Nuclear Charge'** column: 
 
@@ -129,6 +134,34 @@ df_enc.insert(loc = 0, column= 'Elements', value= Elements)
 df_enc
 
 ```
+###### Another benefit of scientific computing is how easy it is to create dataframes and manipulate it to your liking. All you have to do is give the computer the elements you want in the dataframe, and it automatically formats an array of values into a column of a dataframe. You can change the column name to whatever you want and pull out the whole column (*this was done earlier when the columns of the df dataframe were plugged into its corresponding symbolic variable in the Zeff_eq sympy equation*) or extract a specific element in a dataframe and use it in any way you like. Moving the order of columns as shown above is also a quick fix and something that would’ve taken longer if a dataframe was written by hand.
+
+
+# Benefit 3: Visualization of Data 
+
+###### Now that the effective nuclear charge of the 18 elements are calculated and in a dataframe, a graph that represents the data will be created using matplotlib.pyplot functions. 
+
+###### Before doing that, the column that contains the effective nuclear charge values must have its data class changed. After calculating the effective nuclear using the sympy equation Zeff_eq, the values in the enc array are not recognized as numeric objects according to the computer. In order to make the computer recognize it as a number object, as.type(float) will be used: 
+
+```{python}
+
+df_enc['Effective Nuclear Charge']= df_enc['Effective Nuclear Charge'].astype(float)
+
+```
+
+###### To graph data, the function plot() is used. The first argument is what the x value will be, the second argument is the y value, and the third argument is the geometry of the graph. In this case, the purpose of graphing the data is to relatively compare the effective nuclear charges of the elements. The best geometry for that purpose is the bar graph, which creates a bar for every category in the x variable. The height of the bar is proportionate to the value of y. The greater the effective nuclear charge of the element, the higher the bar. As the bars of each element is side by side from each other, the comparison of the element's effective nuclear charge can easily determined visually. 
+
+###### The title of graph is created by using the function plt.title(). To create the x-axis title, plt.xlabel() was used. To create the y-axis title, plt.ylabel() was used: 
+
+```{python}
+
+df_enc.plot('Elements', 'Effective Nuclear Charge', kind= 'bar')
+plt.title("Effective Nuclear Charge of the Elements")
+plt.xlabel("Elements")
+plt.ylabel("Effective Nuclear Charge(protons-inner shell electrons)")
+
+```
+
 
 
 
